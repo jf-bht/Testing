@@ -1,0 +1,13 @@
+Modell Claude Sonnet 4.6 Effort Medium
+
+Prompt für GroceryCart: "Schreibe mir eine GroceryCart Klasse in Java mit addItem(), removeItem() und getTotalPrice(). Nutze den TDD-Ansatz aus dem Skript und JUnit 5."
+
+Ausgabe: Claude lieferte GroceryCart und GroceryItem als einfache Klassen mit einer ArrayList und Stream-basierter Preisberechnung. Grundsätzlich brauchbar, aber nicht ganz fertig.
+
+Eigene Kritik was die KI übersehen hat:
+1. removeItem() ohne Absicherung: Claude gab zunächst eine leere removeItem()-Methode zurück, ohne zu prüfen ob das Item überhaupt im Warenkorb ist. Das ist ein klarer Edge-Case:
+   Was passiert wenn man etwas entfernt das gar nicht drin ist? Ich habe selbst eine IllegalArgumentException ergänzt (REFACTOR-Schritt) bzw mit Claude ergänzen lassen.
+
+2. Kein echter RED-Zustand: Der erste Vorschlag der KI führte eigentlich immer zu einem Compile-Fehler statt einem fehlschlagenden Test. Ich habe dann immer Dummy Methoden ergänzt damit der Code kompiliert und der Test wirklich fehlschlägt.
+
+3. Falscher Grenzwert beim Exception-Test: Für den NutritionService-Test hat Claude Gewicht 5kg vorgeschlagen um negative Carbs auszulösen, das hat nicht funktioniert. Erst bei 200kg greift die Validierung tatsächlich. Den Wert habe ich wie bei der letzten Abgabe selbst korrigiert.
