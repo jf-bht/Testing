@@ -1,10 +1,13 @@
 import java.util.List;
-
+import java.util.ArrayList;
 public class GroceryCart {
+    private final List<GroceryItem> items = new ArrayList<>();
+
     public void addItem(GroceryItem item) {
+        items.add(item);
     }
 
     public List<GroceryItem> getItems() {
-        return null;
+        return items;
     }
 }
