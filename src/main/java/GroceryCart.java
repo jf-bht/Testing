@@ -10,4 +10,8 @@ public class GroceryCart {
     public List<GroceryItem> getItems() {
         return items;
     }
+
+    public double getTotalPrice() {
+        return 0;
+    }
 }
