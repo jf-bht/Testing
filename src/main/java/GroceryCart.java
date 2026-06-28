@@ -12,6 +12,8 @@ public class GroceryCart {
     }
 
     public double getTotalPrice() {
-        return 0;
+        return items.stream()
+                .mapToDouble(item -> item.price() * item.quantity())
+                .sum();
     }
 }
