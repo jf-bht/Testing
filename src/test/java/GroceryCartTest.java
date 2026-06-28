@@ -23,4 +23,11 @@ class GroceryCartTest {
         cart.addItem(new GroceryItem("Milch", 0.99, 1));
         assertEquals(4.97, cart.getTotalPrice(), 0.01);
     }
+    @Test
+    void testRemoveItemDecreasesSize() {
+        GroceryItem tomaten = new GroceryItem("Tomaten", 1.99, 2);
+        cart.addItem(tomaten);
+        cart.removeItem(tomaten);
+        assertEquals(0, cart.getItems().size());
+    }
 }

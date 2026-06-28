@@ -6,6 +6,8 @@ public class GroceryCart {
     public void addItem(GroceryItem item) {
         items.add(item);
     }
+    public void removeItem(GroceryItem item) {
+    }
 
     public List<GroceryItem> getItems() {
         return items;
