@@ -1,0 +1,3 @@
+fetchCalorieMultiplier() simuliert einen Aufruf an eine externe Nutrition-API (z. B. edamam.com oder nutritionix.com), wie sie in der Meals-App realistisch eingesetzt
+würde. Ein echter HTTP-Call im Test ist langsam und fehleranfällig, genau diese "unangenehme" Methode die Mockito (mockito.org) dafür vorsieht. Mit mock() und thenReturn() wird der Dienst isoliert und der
+MealPlanService deterministisch testbar.
