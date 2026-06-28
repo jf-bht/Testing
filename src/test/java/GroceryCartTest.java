@@ -30,4 +30,10 @@ class GroceryCartTest {
         cart.removeItem(tomaten);
         assertEquals(0, cart.getItems().size());
     }
+
+    @Test
+    void testRemoveNonExistentItemThrowsException() {
+        GroceryItem item = new GroceryItem("Bananen", 0.49, 3);
+        assertThrows(IllegalArgumentException.class, () -> cart.removeItem(item));
+    }
 }

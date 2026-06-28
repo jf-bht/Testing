@@ -7,7 +7,9 @@ public class GroceryCart {
         items.add(item);
     }
     public void removeItem(GroceryItem item) {
-        items.remove(item);
+        if (!items.remove(item)) {
+            throw new IllegalArgumentException("Item nicht im Warenkorb: " + item.name());
+        }
     }
 
     public List<GroceryItem> getItems() {
