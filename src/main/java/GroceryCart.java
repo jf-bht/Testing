@@ -7,6 +7,7 @@ public class GroceryCart {
         items.add(item);
     }
     public void removeItem(GroceryItem item) {
+        items.remove(item);
     }
 
     public List<GroceryItem> getItems() {
